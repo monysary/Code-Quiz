@@ -6,10 +6,13 @@ function startTimer() {
     var timeInterval = setInterval(function() {
         timeAmount--
         timerText.textContent = "Time: " + timeAmount + " sec"
+        timerText.setAttribute("style", "font-weight:bold;")
 
         if (timeAmount === 0) {
             clearInterval(timeInterval);
-        }
+        } else if (timeAmount < 117){
+            timerText.setAttribute("style", "color:red; font-weight:bold;");
+        };
     }, 1000);
 }
 
