@@ -1,7 +1,15 @@
-// Timer countdown logic
+// Timer variables
 var timerText = document.querySelector("#timer");
 var timeAmount = 60;
 
+// Start Quiz variables
+var displayQuestion = document.querySelector("#questions");
+var displayAnswers = document.querySelector("#answers");
+var startButton = document.querySelector("#start-btn");
+var submitButton = document.querySelector("#submit-btn");
+var outcomeText = document.querySelector("#outcome");
+
+// Timer countdown logic
 function startTimer() {
     var timeInterval = setInterval(function() {
         timeAmount--
@@ -17,17 +25,13 @@ function startTimer() {
 }
 
 // Display quiz logic, replaces start button with submit button, hides outcome text
-var displayQuestion = document.querySelector("#questions");
-var displayAnswers = document.querySelector("#answers");
-var startButton = document.querySelector("#start-btn");
-var submitButton = document.querySelector("#submit-btn");
-var outcomeText = document.querySelector("#outcome");
-
 function startQuiz() {
     displayQuestion.setAttribute("style", "visibility:visible;");
     displayAnswers.setAttribute("style", "visibility:visible;");
     startButton.setAttribute("style", "display:none;");
     submitButton.setAttribute("style", "display:block;");
+
+    
     outcomeText.setAttribute("style", "display:none;");
 };
 
