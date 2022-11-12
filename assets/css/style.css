@@ -117,7 +117,7 @@ main ul {
 /* Start/submit button styling*/
 #start-submit-btn {
     display: block;
-    margin: 50px auto;
+    margin: 50px auto 35px auto;
     background-color: rgb(0, 102, 255);
     border: none;
     box-shadow: 0px 0px 6px 0px black;
