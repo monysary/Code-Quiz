@@ -12,6 +12,7 @@ var choices1 = document.querySelector("#choice1");
 var choices2 = document.querySelector("#choice2");
 var choices3 = document.querySelector("#choice3");
 var choices4 = document.querySelector("#choice4");
+var questionsIndex = 0;
 
 // Timer countdown logic
 function startTimer() {
@@ -30,14 +31,14 @@ function startTimer() {
 
 // Display quiz logic, replaces start button with submit button, hides outcome text
 function startQuiz() {
-    displayQuestion.textContent = questions[0].title
-    choices1.textContent = questions[0].choices[0];
+    displayQuestion.textContent = questions[questionsIndex].title
+    choices1.textContent = questions[questionsIndex].choices[0];
     radioInput(choices1);
-    choices2.textContent = questions[0].choices[1];
+    choices2.textContent = questions[questionsIndex].choices[1];
     radioInput(choices2);
-    choices3.textContent = questions[0].choices[2];
+    choices3.textContent = questions[questionsIndex].choices[2];
     radioInput(choices3);
-    choices4.textContent = questions[0].choices[3];
+    choices4.textContent = questions[questionsIndex].choices[3];
     radioInput(choices4);
 
     displayQuestion.setAttribute("style", "visibility:visible;");
@@ -55,6 +56,13 @@ function radioInput(someChoice) {
     someChoice.appendChild(radioEl);
 };
 
+// Submit button logic, proceeds to the next question
+function submitQuiz() {
+    questionsIndex++
+    startQuiz()
+};
+
 // Start button event listener for timer countdown and display quiz
 startButton.addEventListener("click", startTimer);
 startButton.addEventListener("click", startQuiz);
+submitButton.addEventListener("click", submitQuiz);
