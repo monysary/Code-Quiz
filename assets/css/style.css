@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Put all body elements in a grid */
@@ -58,12 +59,13 @@ footer{
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    padding-top: 60px;
+    padding-top: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #score-section ol {
     padding-left: 18%;
-    margin-top: 40px;
+    margin-top: 15px;
     font-size: 18px;
 }
 
@@ -81,6 +83,7 @@ li > div {
 h1 {
     font-size: 60px;
     padding-bottom: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 header p {
@@ -97,6 +100,7 @@ header div {
     text-align: center;
     margin-top: 75px;
     font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 main ul {
