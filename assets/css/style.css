@@ -108,7 +108,15 @@ header p {
     margin-top: 50px;
     padding-left: 20%;
     font-size: 27px;
-    visibility: hidden;
+    /* visibility: hidden; */
+}
+
+#displayed-answers label {
+    display: flex;
+}
+
+input {
+    margin-right: 10px;
 }
 
 #outcome {

@@ -3,8 +3,8 @@ var timerText = document.querySelector("#timer");
 var timeAmount = 60;
 
 // Start Quiz variables
-var displayQuestion = document.querySelector("#questions");
-var displayAnswers = document.querySelector("#answers");
+var displayQuestion = document.querySelector("#displayed-questions");
+var displayAnswers = document.querySelector("#displayed-answers");
 var startButton = document.querySelector("#start-btn");
 var submitButton = document.querySelector("#submit-btn");
 var outcomeText = document.querySelector("#outcome");
@@ -26,12 +26,13 @@ function startTimer() {
 
 // Display quiz logic, replaces start button with submit button, hides outcome text
 function startQuiz() {
+    displayQuestion.textContent = questions[0].title
+    displayAnswers.textContent = questions[0].choices
+
     displayQuestion.setAttribute("style", "visibility:visible;");
     displayAnswers.setAttribute("style", "visibility:visible;");
     startButton.setAttribute("style", "display:none;");
     submitButton.setAttribute("style", "display:block;");
-
-    
     outcomeText.setAttribute("style", "display:none;");
 };
 
