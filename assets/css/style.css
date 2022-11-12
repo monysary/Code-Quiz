@@ -101,13 +101,14 @@ header p {
     margin-top: 75px;
     font-size: 40px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+    visibility: hidden;
 }
 
-main ul {
+#answers {
     margin-top: 50px;
     padding-left: 20%;
     font-size: 27px;
+    visibility: hidden;
 }
 
 #outcome {

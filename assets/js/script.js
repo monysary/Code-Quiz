@@ -13,7 +13,19 @@ function startTimer() {
     }, 1000);
 }
 
-// Start/Submit button event listener for timer
-var button = document.querySelector("#start-btn");
+// Display quiz logic, also replaced start button with submit button
+var displayQuestion = document.querySelector("#questions");
+var displayAnswers = document.querySelector("#answers");
+var startButton = document.querySelector("#start-btn");
+var submitButton = document.querySelector("#submit-btn");
 
-button.addEventListener("click", startTimer);
+function startQuiz() {
+    displayQuestion.setAttribute("style", "visibility:visible;");
+    displayAnswers.setAttribute("style", "visibility:visible;");
+    startButton.setAttribute("style", "display:none;");
+    submitButton.setAttribute("style", "display:block;")
+};
+
+// Start button event listener for timer countdown and display quiz
+startButton.addEventListener("click", startTimer);
+startButton.addEventListener("click", startQuiz);
