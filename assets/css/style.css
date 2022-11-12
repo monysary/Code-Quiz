@@ -48,4 +48,26 @@ footer{
     align-self: center;
 }
 
-/* High score board */
+/* High score board styling*/
+#score-section > div {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20%;
+}
+
+#score-section ol {
+    padding-left: 18%;
+    margin-top: 10%;
+    font-size: 18px;
+}
+
+.score-entry {
+    margin: 0% 18% 10% 0%;
+    font-size: 20px;
+}
+
+li > div {
+    display: inline;
+    margin-left: 10px;
+}
