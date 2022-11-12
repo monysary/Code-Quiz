@@ -1,6 +1,6 @@
 // Timer countdown logic
 var timerText = document.querySelector("#timer");
-var timeAmount = 120;
+var timeAmount = 60;
 
 function startTimer() {
     var timeInterval = setInterval(function() {
