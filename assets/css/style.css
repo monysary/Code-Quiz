@@ -99,7 +99,7 @@ header p {
 #displayed-questions {
     text-align: center;
     margin-top: 75px;
-    font-size: 40px;
+    font-size: 35px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     visibility: hidden;
 }
@@ -113,6 +113,8 @@ header p {
 
 #displayed-answers label {
     display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
 
 input {
