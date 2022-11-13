@@ -23,6 +23,7 @@ function startTimer() {
         timerText.textContent = "Time: " + timeAmount + " sec";
         timerText.setAttribute("style", "font-weight:bold;");
 
+        // Timer stops when quiz ends or timer reaches 0
         if (timeAmount === 0 || questionsIndex >= questions.length) {
             clearInterval(timeInterval);
         } else if (timeAmount < 30){

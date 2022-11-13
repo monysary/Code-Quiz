@@ -101,7 +101,7 @@ header p {
     margin: auto 5% 0px 5%;
     font-size: 35px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 #displayed-answers {
