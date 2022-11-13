@@ -134,17 +134,28 @@ main {
 }
 
 /* Enter name and display score styling */
+#enter-name-container {
+    display: none;
+}
+
 .score-name {
     display: block;
     margin: 0px auto;
+    margin-top: 20px;
+    width: 50%;
+    height: 40px;
+    font-size: 20px;
 }
 
 #enter-name > label {
     text-align: center;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #enter-name {
-    display: none;
+    display: block;
+    margin-top: 50px;
 }
 
 /* Start & submit button styling*/

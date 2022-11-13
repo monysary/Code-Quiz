@@ -12,7 +12,7 @@ var choices1 = document.querySelector("#choice1");
 var choices2 = document.querySelector("#choice2");
 var choices3 = document.querySelector("#choice3");
 var choices4 = document.querySelector("#choice4");
-var scoreName = document.querySelector("#enter-name");
+var scoreName = document.querySelector("#enter-name-container");
 var questionsIndex = 0;
 var playerScore = 0
 
