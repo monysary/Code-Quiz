@@ -12,7 +12,8 @@ var choices1 = document.querySelector("#choice1");
 var choices2 = document.querySelector("#choice2");
 var choices3 = document.querySelector("#choice3");
 var choices4 = document.querySelector("#choice4");
-var scoreName = document.querySelector("#enter-name-container");
+var scoreNameContainer = document.querySelector("#enter-name-container");
+var playerName = document.querySelector("#your-score");
 var questionsIndex = 0;
 var playerScore = 0
 
@@ -39,7 +40,8 @@ function startQuiz() {
         enterName();
         outcomeText.setAttribute("style", "display:none");
         displayAnswers.setAttribute("style", "display:none");
-        scoreName.setAttribute("style", "display:block");
+        playerName.textContent = "Your score: " + playerScore;
+        scoreNameContainer.setAttribute("style", "display:block");
         return;
     } else {
 

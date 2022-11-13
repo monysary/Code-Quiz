@@ -138,7 +138,8 @@ main {
     display: none;
 }
 
-.score-name {
+#your-score,
+#name-input {
     display: block;
     margin: 0px auto;
     margin-top: 20px;
