@@ -7,6 +7,7 @@ var displayQuestion = document.querySelector("#displayed-questions");
 var displayAnswers = document.querySelector("#displayed-answers");
 var startButton = document.querySelector("#start-btn");
 var submitButton = document.querySelector("#submit-btn");
+var logScoreButton = document.querySelector("#log-score-btn");
 var outcomeText = document.querySelector("#outcome");
 var choices1 = document.querySelector("#choice1");
 var choices2 = document.querySelector("#choice2");
@@ -42,6 +43,9 @@ function startQuiz() {
         displayAnswers.setAttribute("style", "display:none");
         playerName.textContent = "Your score: " + playerScore;
         scoreNameContainer.setAttribute("style", "display:block");
+        submitButton.setAttribute("style", "display:none");
+        logScoreButton.setAttribute("style", "display:block");
+
         return;
     } else {
 
@@ -105,8 +109,12 @@ function submitQuiz(event) {
 function enterName() {
     displayQuestion.textContent = "Great job!";
     displayAnswers.setAttribute("style", "display:none");
+};
 
-}
+// Function for logging player's name and score onto High Score board
+function loggingScore() {
+
+};
 
 // Start button event listener for timer countdown and display quiz
 startButton.addEventListener("click", startTimer);
