@@ -17,9 +17,9 @@ var questionsIndex = 0;
 // Timer countdown logic
 function startTimer() {
     var timeInterval = setInterval(function() {
-        timeAmount--
-        timerText.textContent = "Time: " + timeAmount + " sec"
-        timerText.setAttribute("style", "font-weight:bold;")
+        timeAmount--;
+        timerText.textContent = "Time: " + timeAmount + " sec";
+        timerText.setAttribute("style", "font-weight:bold;");
 
         if (timeAmount === 0) {
             clearInterval(timeInterval);
@@ -56,7 +56,6 @@ function startQuiz() {
     displayAnswers.setAttribute("style", "visibility:visible;");
     startButton.setAttribute("style", "display:none;");
     submitButton.setAttribute("style", "display:block;");
-    outcomeText.setAttribute("style", "display:none;");
 };
 
 // Function to create radio button with text for answer choices
@@ -73,13 +72,13 @@ function submitQuiz(event) {
 
     // Check answers, proceed if correct, -5 seconds if wrong
     if (document.querySelector("input[name='answer-choice']:checked").value === questions[questionsIndex].answer) {
+        outcomeText.textContent = "Correct!";
         console.log("correct");
+        questionsIndex++
+        startQuiz()
     } else {
         console.log("incorrect");
     }
-
-    questionsIndex++
-    startQuiz()
 };
 
 
