@@ -32,11 +32,13 @@ function startTimer() {
 
 // Display quiz logic, replaces start button with submit button, hides outcome text
 function startQuiz() {
+    // Action when all quiz questions have been asked
     if (questionsIndex >= questions.length) {
-        console.log("Quiz complete!");
+        enterName()
         return;
     } else {
 
+        // Display the question
         displayQuestion.textContent = questions[questionsIndex].title;
 
         // Display answer options through label tags
@@ -91,6 +93,11 @@ function submitQuiz(event) {
         outcomeText.textContent = "Wrong! -5 seconds";
     }
 };
+
+// End of quiz display, asks for user to enter their name to be logged into high score board
+function enterName() {
+    displayQuestion.textContent = "Thanks for playing!"
+}
 
 // Start button event listener for timer countdown and display quiz
 startButton.addEventListener("click", startTimer);
