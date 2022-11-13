@@ -99,10 +99,10 @@ function submitQuiz(event) {
     } else {
         if (playerScore > 0) {
             playerScore -= 5
-        }
+        };
         timeAmount -= 5;
         outcomeText.textContent = "Wrong! -5 seconds";
-    }
+    };
 };
 
 // End of quiz display, asks for user to enter their name to be logged into high score board
@@ -112,11 +112,14 @@ function enterName() {
 };
 
 // Function for logging player's name and score onto High Score board
-function loggingScore() {
+function loggingScore(event) {
+    event.preventDefault();
 
+    
 };
 
 // Start button event listener for timer countdown and display quiz
 startButton.addEventListener("click", startTimer);
 startButton.addEventListener("click", startQuiz);
 submitButton.addEventListener("click", submitQuiz);
+logScoreButton.addEventListener("click", loggingScore);
