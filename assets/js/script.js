@@ -116,11 +116,17 @@ function enterName() {
 function loggingScore(event) {
     event.preventDefault();
 
+    // Store name input and score into object
     highScores.names = nameInput.value;
     highScores.finalScore = playerScore;
 
-    console.log(highScores);
+    // Display the name and score on High Score board
+    highScoreBoard.push(highScores);
+    document.querySelector("#name1").textContent = highScoreBoard[0].names;
+    document.querySelector("#score1").textContent = highScoreBoard[0].finalScore;
 
+    console.log(highScores);
+    console.log(highScoreBoard);
 
 };
 
