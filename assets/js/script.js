@@ -12,6 +12,7 @@ var choices1 = document.querySelector("#choice1");
 var choices2 = document.querySelector("#choice2");
 var choices3 = document.querySelector("#choice3");
 var choices4 = document.querySelector("#choice4");
+var scoreName = document.querySelector("#enter-name");
 var questionsIndex = 0;
 var playerScore = 0
 
@@ -34,7 +35,10 @@ function startTimer() {
 function startQuiz() {
     // Action when all quiz questions have been asked
     if (questionsIndex >= questions.length) {
-        enterName()
+        enterName();
+        outcomeText.setAttribute("style", "display:none");
+        displayAnswers.setAttribute("style", "display:none");
+        scoreName.setAttribute("style", "display:block");
         return;
     } else {
 
@@ -96,7 +100,9 @@ function submitQuiz(event) {
 
 // End of quiz display, asks for user to enter their name to be logged into high score board
 function enterName() {
-    displayQuestion.textContent = "Thanks for playing!"
+    displayQuestion.textContent = "Thanks for playing!";
+    displayAnswers.setAttribute("style", "display:none");
+
 }
 
 // Start button event listener for timer countdown and display quiz

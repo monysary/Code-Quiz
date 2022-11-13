@@ -126,6 +126,20 @@ input {
     font-size: 20px;
 }
 
+/* Enter name and display score styling */
+.score-name {
+    display: block;
+    margin: 0px auto;
+}
+
+#enter-name > label {
+    text-align: center;
+}
+
+#enter-name {
+    display: none;
+}
+
 /* Start & submit button styling*/
 #start-btn,
 #submit-btn {
