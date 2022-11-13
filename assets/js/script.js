@@ -101,7 +101,7 @@ function submitQuiz(event) {
 
 // End of quiz display, asks for user to enter their name to be logged into high score board
 function enterName() {
-    displayQuestion.textContent = "Thanks for playing!";
+    displayQuestion.textContent = "Great job!";
     displayAnswers.setAttribute("style", "display:none");
 
 }
