@@ -13,6 +13,7 @@ var choices2 = document.querySelector("#choice2");
 var choices3 = document.querySelector("#choice3");
 var choices4 = document.querySelector("#choice4");
 var questionsIndex = 0;
+var playerScore = 0
 
 // Timer countdown logic
 function startTimer() {
@@ -72,9 +73,10 @@ function submitQuiz(event) {
 
     // Check answers, proceed if correct, -5 seconds if wrong
     if (document.querySelector("input[name='answer-choice']:checked").value === questions[questionsIndex].answer) {
+        playerScore += 20;
         outcomeText.textContent = "Correct!";
-        questionsIndex++
-        startQuiz()
+        questionsIndex++;
+        startQuiz();
     } else {
         timeAmount -= 5;
         outcomeText.textContent = "Wrong! -5 seconds";
