@@ -15,6 +15,7 @@ var choices3 = document.querySelector("#choice3");
 var choices4 = document.querySelector("#choice4");
 var scoreNameContainer = document.querySelector("#enter-name-container");
 var playerName = document.querySelector("#your-score");
+var nameInput = document.querySelector("#name-input");
 var questionsIndex = 0;
 var playerScore = 0
 
@@ -115,7 +116,12 @@ function enterName() {
 function loggingScore(event) {
     event.preventDefault();
 
-    
+    highScores.names = nameInput.value;
+    highScores.finalScore = playerScore;
+
+    console.log(highScores);
+
+
 };
 
 // Start button event listener for timer countdown and display quiz
