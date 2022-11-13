@@ -98,7 +98,7 @@ header p {
 /* Main/Questions section styling*/
 #displayed-questions {
     text-align: center;
-    margin-top: 75px;
+    margin: 75px 5% 0px 5%;
     font-size: 35px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     visibility: hidden;
@@ -108,7 +108,7 @@ header p {
     margin-top: 50px;
     padding-left: 20%;
     font-size: 27px;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 #displayed-answers label {
