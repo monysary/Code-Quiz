@@ -23,7 +23,7 @@ function startTimer() {
         timerText.textContent = "Time: " + timeAmount + " sec";
         timerText.setAttribute("style", "font-weight:bold;");
 
-        if (timeAmount === 0) {
+        if (timeAmount === 0 || questionsIndex >= questions.length) {
             clearInterval(timeInterval);
         } else if (timeAmount < 30){
             timerText.setAttribute("style", "color:red; font-weight:bold;");
