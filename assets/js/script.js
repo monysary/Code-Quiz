@@ -76,6 +76,7 @@ function submitQuiz(event) {
         questionsIndex++
         startQuiz()
     } else {
+        timeAmount -= 5;
         outcomeText.textContent = "Wrong! -5 seconds";
     }
 };
