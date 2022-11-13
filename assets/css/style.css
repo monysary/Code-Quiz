@@ -158,9 +158,10 @@ main {
     margin-top: 50px;
 }
 
-/* Start & submit button styling*/
+/* Buttons styling*/
 #start-btn,
-#submit-btn {
+#submit-btn,
+#log-score-btn {
     display: block;
     margin: auto;
     background-color: rgb(0, 102, 255);
@@ -175,6 +176,10 @@ main {
 }
 
 #submit-btn {
+    display: none;
+}
+
+#log-score-btn {
     display: none;
 }
 
