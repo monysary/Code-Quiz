@@ -32,31 +32,37 @@ function startTimer() {
 
 // Display quiz logic, replaces start button with submit button, hides outcome text
 function startQuiz() {
-    displayQuestion.textContent = questions[questionsIndex].title
+    if (questionsIndex >= questions.length) {
+        console.log("Quiz complete!");
+        return;
+    } else {
 
-    // Display answer options through label tags
-    choices1.textContent = questions[questionsIndex].choices[0];
-    choices2.textContent = questions[questionsIndex].choices[1];
-    choices3.textContent = questions[questionsIndex].choices[2];
-    choices4.textContent = questions[questionsIndex].choices[3];
+        displayQuestion.textContent = questions[questionsIndex].title;
 
-    // Generate radio button input next to answer options
-    radioInput(choices1);
-    radioInput(choices2);
-    radioInput(choices3);
-    radioInput(choices4);
-    
-    // Set value attribute of input to answer choices 
-    displayAnswers[0].setAttribute("value", questions[questionsIndex].choices[0]);
-    displayAnswers[1].setAttribute("value", questions[questionsIndex].choices[1]);
-    displayAnswers[2].setAttribute("value", questions[questionsIndex].choices[2]);
-    displayAnswers[3].setAttribute("value", questions[questionsIndex].choices[3]);
+        // Display answer options through label tags
+        choices1.textContent = questions[questionsIndex].choices[0];
+        choices2.textContent = questions[questionsIndex].choices[1];
+        choices3.textContent = questions[questionsIndex].choices[2];
+        choices4.textContent = questions[questionsIndex].choices[3];
 
-    // Display questions, answer, and submit button
-    displayQuestion.setAttribute("style", "visibility:visible;");
-    displayAnswers.setAttribute("style", "visibility:visible;");
-    startButton.setAttribute("style", "display:none;");
-    submitButton.setAttribute("style", "display:block;");
+        // Generate radio button input next to answer options
+        radioInput(choices1);
+        radioInput(choices2);
+        radioInput(choices3);
+        radioInput(choices4);
+        
+        // Set value attribute of input to answer choices 
+        displayAnswers[0].setAttribute("value", questions[questionsIndex].choices[0]);
+        displayAnswers[1].setAttribute("value", questions[questionsIndex].choices[1]);
+        displayAnswers[2].setAttribute("value", questions[questionsIndex].choices[2]);
+        displayAnswers[3].setAttribute("value", questions[questionsIndex].choices[3]);
+
+        // Display questions, answer, and submit button
+        displayQuestion.setAttribute("style", "visibility:visible;");
+        displayAnswers.setAttribute("style", "visibility:visible;");
+        startButton.setAttribute("style", "display:none;");
+        submitButton.setAttribute("style", "display:block;");
+    };
 };
 
 // Function to create radio button with text for answer choices
@@ -85,7 +91,6 @@ function submitQuiz(event) {
         outcomeText.textContent = "Wrong! -5 seconds";
     }
 };
-
 
 // Start button event listener for timer countdown and display quiz
 startButton.addEventListener("click", startTimer);
