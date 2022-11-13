@@ -73,11 +73,10 @@ function submitQuiz(event) {
     // Check answers, proceed if correct, -5 seconds if wrong
     if (document.querySelector("input[name='answer-choice']:checked").value === questions[questionsIndex].answer) {
         outcomeText.textContent = "Correct!";
-        console.log("correct");
         questionsIndex++
         startQuiz()
     } else {
-        console.log("incorrect");
+        outcomeText.textContent = "Wrong! -5 seconds";
     }
 };
 
