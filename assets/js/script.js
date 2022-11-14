@@ -35,38 +35,38 @@ function startTimer() {
         timerText.setAttribute("style", "font-weight:bold;");
 
         // Timer stops when quiz ends or timer reaches 0
-        if (timeAmount < 0 || questionsIndex >= questions.length) {
-            console.log("timer 0");
-            timeAmount = 0
-            timerText.textContent = "Time: " + timeAmount + " sec"
-            timerText.setAttribute("style", "color:red; font-weight:bold;")
+        if (timeAmount < 0) {
             clearInterval(timeInterval);
-        } else if (timeAmount < 30){
+            timeAmount = 0;
+            timerText.textContent = "Time: " + timeAmount + " sec";
+            quizEnd();
+        } else if (questionsIndex >= questions.length) {
+            clearInterval(timeInterval);
+            timerText.textContent = "Time: " + timeAmount + " sec";
+        }
+        if (timeAmount < 30){
             timerText.setAttribute("style", "color:red; font-weight:bold;");
         };
     }, 1000);
 }
 
 // Function to display post quiz page, displays score and input to log name
-
+function quizEnd() {
+    displayQuestion.textContent = "Great job!";
+    outcomeText.setAttribute("style", "display:none");
+    displayAnswers.setAttribute("style", "display:none");
+    playerName.textContent = "Your score: " + playerScore;
+    scoreNameContainer.setAttribute("style", "display:block");
+    submitButton.setAttribute("style", "display:none");
+    logScoreButton.setAttribute("style", "display:block");
+};
 
 // Display quiz logic, replaces start button with submit button, hides outcome text
 function startQuiz() {
-    // Starts timer
-    startTimer();
-
     // Action when all quiz questions have been asked
     if (questionsIndex >= questions.length) {
-        console.log("startQuiz timer 0");
-        displayQuestion.textContent = "Great job!";
-        outcomeText.setAttribute("style", "display:none");
-        displayAnswers.setAttribute("style", "display:none");
-        playerName.textContent = "Your score: " + playerScore;
-        scoreNameContainer.setAttribute("style", "display:block");
-        submitButton.setAttribute("style", "display:none");
-        logScoreButton.setAttribute("style", "display:block");
+        quizEnd();
 
-        return;
     } else {
 
         // Display the question
@@ -189,6 +189,8 @@ function startAgain() {
 
 // Start button event listener for timer countdown and display quiz
 startButton.addEventListener("click", startQuiz);
+startButton.addEventListener("click", startTimer);
 submitButton.addEventListener("click", submitQuiz);
 logScoreButton.addEventListener("click", loggingScore);
 startAgainButton.addEventListener("click", startAgain);
+startAgainButton.addEventListener("click", startTimer);
