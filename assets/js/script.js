@@ -9,6 +9,7 @@ var displayAnswers = document.querySelector("#displayed-answers");
 var startButton = document.querySelector("#start-btn");
 var submitButton = document.querySelector("#submit-btn");
 var logScoreButton = document.querySelector("#log-score-btn");
+var startAgainButton = document.querySelector("#start-again-btn");
 var outcomeText = document.querySelector("#outcome");
 var choices1 = document.querySelector("#choice1");
 var choices2 = document.querySelector("#choice2");
@@ -126,6 +127,10 @@ function loggingScore(event) {
     document.querySelector("#score" + i).textContent = highScoreBoard[i].finalScore;
 
     i++;
+
+    // Replaces Submit button with Play Again button
+    logScoreButton.setAttribute("style", "display:none");
+    startAgainButton.setAttribute("style", "display:block");
 };
 
 // Function for creating list items under ordered list to log player name and score
@@ -147,6 +152,9 @@ function createLi (x) {
         return;
     };
 };
+
+// Function for starting the quiz over
+
 
 // Start button event listener for timer countdown and display quiz
 startButton.addEventListener("click", startTimer);
