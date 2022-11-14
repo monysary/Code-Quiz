@@ -166,7 +166,9 @@ function startAgain() {
     // Starts quiz all over
     startQuiz();
 
-    return;
+    // Hide these things again
+    scoreNameContainer.setAttribute("style", "display:none");
+    startAgainButton.setAttribute("style", "display:none");
 };
 
 // Start button event listener for timer countdown and display quiz
