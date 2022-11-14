@@ -136,18 +136,22 @@ function loggingScore(event) {
 
 // Function for creating list items under ordered list to log player name and score
 function createLi (x) {
-    // Creating list item
-    var orderedListItem = document.createElement("li");
-    orderedListItem.setAttribute("id", "score-entry" + x);
-    orderedList.appendChild(orderedListItem);
-    
-    //Creating div then store name and score 
-    var nameDiv = document.createElement("div");
-    nameDiv.setAttribute("id", "name" + x);
-    var scoreDiv = document.createElement("div");
-    scoreDiv.setAttribute("id", "score" + x);
-    orderedListItem.appendChild(nameDiv);
-    orderedListItem.appendChild(scoreDiv);
+    if (x < 10) {
+        // Creating list item
+        var orderedListItem = document.createElement("li");
+        orderedListItem.setAttribute("id", "score-entry" + x);
+        orderedList.appendChild(orderedListItem);
+        
+        //Creating div then store name and score 
+        var nameDiv = document.createElement("div");
+        nameDiv.setAttribute("id", "name" + x);
+        var scoreDiv = document.createElement("div");
+        scoreDiv.setAttribute("id", "score" + x);
+        orderedListItem.appendChild(nameDiv);
+        orderedListItem.appendChild(scoreDiv);
+    } else {
+        return;
+    };
 };
 
 // Start button event listener for timer countdown and display quiz
