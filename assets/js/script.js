@@ -2,24 +2,30 @@
 var timerText = document.querySelector("#timer");
 var timeAmount = 60;
 
-// Declaring global variables for all functions
+// High Score variables
 var orderedList = document.querySelector("#ordered-list");
+var playerScore = 0
+
+// Main element variables
 var displayQuestion = document.querySelector("#displayed-questions");
 var displayAnswers = document.querySelector("#displayed-answers");
-var startButton = document.querySelector("#start-btn");
-var submitButton = document.querySelector("#submit-btn");
-var logScoreButton = document.querySelector("#log-score-btn");
-var startAgainButton = document.querySelector("#start-again-btn");
 var outcomeText = document.querySelector("#outcome");
 var choices1 = document.querySelector("#choice1");
 var choices2 = document.querySelector("#choice2");
 var choices3 = document.querySelector("#choice3");
 var choices4 = document.querySelector("#choice4");
+var questionsIndex = 0;
+
+// Button variables
+var startButton = document.querySelector("#start-btn");
+var submitButton = document.querySelector("#submit-btn");
+var logScoreButton = document.querySelector("#log-score-btn");
+var startAgainButton = document.querySelector("#start-again-btn");
+
+// Post quiz variables
 var scoreNameContainer = document.querySelector("#enter-name-container");
 var playerName = document.querySelector("#your-score");
 var nameInput = document.querySelector("#name-input");
-var questionsIndex = 0;
-var playerScore = 0
 
 // Timer countdown logic
 function startTimer() {
@@ -29,13 +35,20 @@ function startTimer() {
         timerText.setAttribute("style", "font-weight:bold;");
 
         // Timer stops when quiz ends or timer reaches 0
-        if (timeAmount === 0 || questionsIndex >= questions.length) {
+        if (timeAmount < 0 || questionsIndex >= questions.length) {
+            console.log("timer 0");
+            timeAmount = 0
+            timerText.textContent = "Time: " + timeAmount + " sec"
+            timerText.setAttribute("style", "color:red; font-weight:bold;")
             clearInterval(timeInterval);
         } else if (timeAmount < 30){
             timerText.setAttribute("style", "color:red; font-weight:bold;");
         };
     }, 1000);
 }
+
+// Function to display post quiz page, displays score and input to log name
+
 
 // Display quiz logic, replaces start button with submit button, hides outcome text
 function startQuiz() {
@@ -44,6 +57,7 @@ function startQuiz() {
 
     // Action when all quiz questions have been asked
     if (questionsIndex >= questions.length) {
+        console.log("startQuiz timer 0");
         displayQuestion.textContent = "Great job!";
         outcomeText.setAttribute("style", "display:none");
         displayAnswers.setAttribute("style", "display:none");
@@ -169,6 +183,8 @@ function startAgain() {
     // Hide these things again
     scoreNameContainer.setAttribute("style", "display:none");
     startAgainButton.setAttribute("style", "display:none");
+    outcomeText.setAttribute("style", "display:block");
+    outcomeText.textContent ="Good luck!";
 };
 
 // Start button event listener for timer countdown and display quiz
