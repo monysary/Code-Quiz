@@ -117,9 +117,7 @@ function submitQuiz(event) {
         questionsIndex++;
         startQuiz();
     } else {
-        if (playerScore > 0) {
-            playerScore -= 5;
-        };
+        playerScore -= 5;
         timeAmount -= 5;
         outcomeText.textContent = "Wrong! -5 seconds";
     };
@@ -143,7 +141,7 @@ function loggingScore(event) {
     document.querySelector("#name" + i).textContent = highScoreBoard[i].names;
     document.querySelector("#score" + i).textContent = highScoreBoard[i].finalScore;
 
-    i++;
+    i++
 
     // Replaces Submit button with Play Again button
     logScoreButton.setAttribute("style", "display:none");
@@ -172,8 +170,9 @@ function createLi (x) {
 
 // Function for starting the quiz over
 function startAgain() {
-    // Reset time, questions, and score
-    timeAmount = 60
+    // Reset player input name, time, questions, and score
+    nameInput.value = "";
+    timeAmount = 60;
     questionsIndex = 0;
     playerScore = 0;
 
