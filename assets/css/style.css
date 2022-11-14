@@ -160,9 +160,7 @@ main {
 }
 
 /* Buttons styling*/
-#start-btn,
-#submit-btn,
-#log-score-btn {
+button {
     display: block;
     margin: auto;
     background-color: rgb(0, 102, 255);
@@ -176,11 +174,9 @@ main {
     border-radius: 50px;
 }
 
-#submit-btn {
-    display: none;
-}
-
-#log-score-btn {
+#submit-btn,
+#log-score-btn,
+#play-again-btn {
     display: none;
 }
 
