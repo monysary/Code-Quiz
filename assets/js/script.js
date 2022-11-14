@@ -2,7 +2,8 @@
 var timerText = document.querySelector("#timer");
 var timeAmount = 60;
 
-// Start Quiz variables
+// Declaring global variables for all functions
+var orderedList = document.querySelector("#ordered-list");
 var displayQuestion = document.querySelector("#displayed-questions");
 var displayAnswers = document.querySelector("#displayed-answers");
 var startButton = document.querySelector("#start-btn");
@@ -99,7 +100,7 @@ function submitQuiz(event) {
         startQuiz();
     } else {
         if (playerScore > 0) {
-            playerScore -= 5
+            playerScore -= 5;
         };
         timeAmount -= 5;
         outcomeText.textContent = "Wrong! -5 seconds";
@@ -113,6 +114,7 @@ function enterName() {
 };
 
 // Function for logging player's name and score onto High Score board
+var i = 0
 function loggingScore(event) {
     event.preventDefault();
 
@@ -120,14 +122,32 @@ function loggingScore(event) {
     highScores.names = nameInput.value;
     highScores.finalScore = playerScore;
 
-    // Display the name and score on High Score board
+    // Add player score and name to highScore array
     highScoreBoard.push(highScores);
-    document.querySelector("#name1").textContent = highScoreBoard[0].names;
-    document.querySelector("#score1").textContent = highScoreBoard[0].finalScore;
 
-    console.log(highScores);
-    console.log(highScoreBoard);
+    createLi(i);
 
+    // Add name and score to High Score board
+    document.querySelector("#name" + i).textContent = highScoreBoard[i].names;
+    document.querySelector("#score" + i).textContent = highScoreBoard[i].finalScore;
+
+    i++;
+};
+
+// Function for creating list items under ordered list to log player name and score
+function createLi (x) {
+    // Creating list item
+    var orderedListItem = document.createElement("li");
+    orderedListItem.setAttribute("id", "score-entry" + x);
+    orderedList.appendChild(orderedListItem);
+    
+    //Creating div then store name and score 
+    var nameDiv = document.createElement("div");
+    nameDiv.setAttribute("id", "name" + x);
+    var scoreDiv = document.createElement("div");
+    scoreDiv.setAttribute("id", "score" + x);
+    orderedListItem.appendChild(nameDiv);
+    orderedListItem.appendChild(scoreDiv);
 };
 
 // Start button event listener for timer countdown and display quiz
