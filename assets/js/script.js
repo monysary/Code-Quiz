@@ -5,6 +5,11 @@ var timeAmount = 60;
 // High Score variables
 var orderedList = document.querySelector("#ordered-list");
 var playerScore = 0
+var highScores = {
+    names:"",
+    finalScore:""
+};
+var highScoreBoard = [];
 
 // Main element variables
 var displayQuestion = document.querySelector("#displayed-questions");
