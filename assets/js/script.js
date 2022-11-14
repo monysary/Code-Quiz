@@ -40,7 +40,7 @@ function startTimer() {
 function startQuiz() {
     // Action when all quiz questions have been asked
     if (questionsIndex >= questions.length) {
-        enterName();
+        displayQuestion.textContent = "Great job!";
         outcomeText.setAttribute("style", "display:none");
         displayAnswers.setAttribute("style", "display:none");
         playerName.textContent = "Your score: " + playerScore;
@@ -105,12 +105,6 @@ function submitQuiz(event) {
         timeAmount -= 5;
         outcomeText.textContent = "Wrong! -5 seconds";
     };
-};
-
-// End of quiz display, asks for user to enter their name to be logged into high score board
-function enterName() {
-    displayQuestion.textContent = "Great job!";
-    displayAnswers.setAttribute("style", "display:none");
 };
 
 // Function for logging player's name and score onto High Score board
