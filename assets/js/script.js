@@ -39,6 +39,9 @@ function startTimer() {
 
 // Display quiz logic, replaces start button with submit button, hides outcome text
 function startQuiz() {
+    // Starts timer
+    startTimer();
+
     // Action when all quiz questions have been asked
     if (questionsIndex >= questions.length) {
         displayQuestion.textContent = "Great job!";
@@ -154,10 +157,20 @@ function createLi (x) {
 };
 
 // Function for starting the quiz over
+function startAgain() {
+    // Reset time, questions, and score
+    timeAmount = 60
+    questionsIndex = 0;
+    playerScore = 0;
 
+    // Starts quiz all over
+    startQuiz();
+
+    return;
+};
 
 // Start button event listener for timer countdown and display quiz
-startButton.addEventListener("click", startTimer);
 startButton.addEventListener("click", startQuiz);
 submitButton.addEventListener("click", submitQuiz);
 logScoreButton.addEventListener("click", loggingScore);
+startAgainButton.addEventListener("click", startAgain);
