@@ -142,29 +142,35 @@ var i = 0
 function loggingScore(event) {
     event.preventDefault();
 
-    // Store name input and score into object and store in local storage
-    highScores.names = nameInput.value;
-    highScores.finalScore = playerScore;
-    localStorage.setItem("highScores", JSON.stringify(highScores));
+    // Checks if player inputs their name
+    if (nameInput.value != "") {
+        // Store name input and score into object and store in local storage
+        highScores.names = nameInput.value;
+        highScores.finalScore = playerScore;
+        localStorage.setItem("highScores", JSON.stringify(highScores));
 
-    // Add player score and name to highScore array
-    var highScoresObject = JSON.parse(localStorage.getItem("highScores"));
-    highScoreBoard.push(highScoresObject);
-    highScoreBoard.sort((a, b) => {return b.finalScore - a.finalScore;});
+        // Add player score and name to highScore array
+        var highScoresObject = JSON.parse(localStorage.getItem("highScores"));
+        highScoreBoard.push(highScoresObject);
+        highScoreBoard.sort((a, b) => {return b.finalScore - a.finalScore;});
 
-    createLi(i);
+        createLi(i);
 
-    // Add name and score to High Score board with higher scores going first
-    for (var loopScore = 0; loopScore < highScoreBoard.length; loopScore++) {
-        document.querySelector("#name" + loopScore).textContent = highScoreBoard[loopScore].names;
-        document.querySelector("#score" + loopScore).textContent = highScoreBoard[loopScore].finalScore;
-    }
+        // Add name and score to High Score board with higher scores going first
+        for (var loopScore = 0; loopScore < highScoreBoard.length; loopScore++) {
+            document.querySelector("#name" + loopScore).textContent = highScoreBoard[loopScore].names;
+            document.querySelector("#score" + loopScore).textContent = highScoreBoard[loopScore].finalScore;
+        }
 
-    i++;
+        i++;
 
-    // Replaces Submit button with Play Again button
-    logScoreButton.setAttribute("style", "display:none");
-    startAgainButton.setAttribute("style", "display:block");
+        // Replaces Submit button with Play Again button
+        logScoreButton.setAttribute("style", "display:none");
+        startAgainButton.setAttribute("style", "display:block");
+    } else {
+        outcomeText.textContent = "Please enter your name"
+        outcomeText.setAttribute("style", "display:block");
+    };
 };
 
 // Function for creating list items under ordered list to log player name and score
