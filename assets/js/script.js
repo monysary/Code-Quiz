@@ -4,7 +4,7 @@ var timeAmount = 60;
 
 // High Score variables
 var orderedList = document.querySelector("#ordered-list");
-var playerScore = 0
+var playerScore = 100
 var highScores = {
     names:"",
     finalScore:""
@@ -89,7 +89,7 @@ function startQuiz() {
         radioInput(choices3);
         radioInput(choices4);
         
-        // Set value attribute of input to answer choices 
+        // Set value attribute of input to answer choices
         displayAnswers[0].setAttribute("value", questions[questionsIndex].choices[0]);
         displayAnswers[1].setAttribute("value", questions[questionsIndex].choices[1]);
         displayAnswers[2].setAttribute("value", questions[questionsIndex].choices[2]);
@@ -117,7 +117,7 @@ function submitQuiz(event) {
 
     // Check answers, proceed if correct, -5 seconds if wrong
     if (document.querySelector("input[name='answer-choice']:checked").value === questions[questionsIndex].answer) {
-        playerScore += 20;
+        // playerScore += 20;
         outcomeText.textContent = "Correct!";
         questionsIndex++;
         startQuiz();
@@ -148,9 +148,9 @@ function loggingScore(event) {
     createLi(i);
 
     // Add name and score to High Score board with higher scores going first
-    for (var loopI = 0; loopI < highScoreBoard.length; loopI++) {
-        document.querySelector("#name" + loopI).textContent = highScoreBoard[loopI].names;
-        document.querySelector("#score" + loopI).textContent = highScoreBoard[loopI].finalScore;
+    for (var loopScore = 0; loopScore < highScoreBoard.length; loopScore++) {
+        document.querySelector("#name" + loopScore).textContent = highScoreBoard[loopScore].names;
+        document.querySelector("#score" + loopScore).textContent = highScoreBoard[loopScore].finalScore;
     }
 
     i++;
@@ -186,7 +186,7 @@ function startAgain() {
     nameInput.value = "";
     timeAmount = 60;
     questionsIndex = 0;
-    playerScore = 0;
+    playerScore = 100;
 
     // Starts quiz all over
     startQuiz();
