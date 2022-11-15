@@ -201,3 +201,42 @@ h3 {
     font-size: 13px;
     font-weight: none;
 }
+
+/* Media query for screen size width 1530px*/
+@media screen and (max-width: 1530px) {
+    h1 {
+        font-size: 50px;
+    }
+}
+
+/* Media query for screen size width 1280 */
+@media screen and (max-width: 1280px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    header p {
+        font-size: 20px;
+    }
+
+    #timer {
+        font-size: 20px;
+    }
+
+    #score-section > div,
+    #rules-section > div {
+        font-size: 25px;
+    }
+
+    ol li {
+        font-size: 17px;
+    }
+
+    #displayed-questions {
+        font-size: 30px;
+    }
+
+    #enter-name > label {
+        font-size: 20px;
+    }
+}
