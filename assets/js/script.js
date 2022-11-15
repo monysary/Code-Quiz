@@ -115,18 +115,22 @@ function radioInput(someChoice) {
 function submitQuiz(event) {
     event.preventDefault();
 
-    // Check answers, proceed if correct, -5 seconds if wrong
-    if (document.querySelector("input[name='answer-choice']:checked").value === questions[questionsIndex].answer) {
-        // playerScore += 20;
-        outcomeText.textContent = "Correct!";
-        questionsIndex++;
-        startQuiz();
-    } else {
-        if (playerScore > 0) {
-            playerScore -= 5;
+    if (document.querySelector("input[name='answer-choice']:checked")) {
+        // Check answers, proceed if correct, -5 seconds if wrong
+        if (document.querySelector("input[name='answer-choice']:checked").value === questions[questionsIndex].answer) {
+            // playerScore += 20;
+            outcomeText.textContent = "Correct!";
+            questionsIndex++;
+            startQuiz();
+        } else {
+            if (playerScore > 0) {
+                playerScore -= 5;
+            };
+            timeAmount -= 5;
+            outcomeText.textContent = "Wrong! -5 seconds";
         };
-        timeAmount -= 5;
-        outcomeText.textContent = "Wrong! -5 seconds";
+    } else {
+        outcomeText.textContent = "Please choose an answer";
     };
 };
 
