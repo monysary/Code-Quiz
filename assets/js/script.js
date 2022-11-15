@@ -4,7 +4,7 @@ var timeAmount = 60;
 
 // High Score variables
 var orderedList = document.querySelector("#ordered-list");
-var playerScore = 100
+var playerScore = 0
 var highScores = {
     names:"",
     finalScore:""
@@ -44,6 +44,9 @@ function startTimer() {
             clearInterval(timeInterval);
             timeAmount = 0;
             timerText.textContent = "Time: " + timeAmount + " sec";
+            if (playerScore < 0) {
+                playerScore = 0;
+            };
             quizEnd();
         } else if (questionsIndex >= questions.length) {
             clearInterval(timeInterval);
@@ -115,23 +118,23 @@ function radioInput(someChoice) {
 function submitQuiz(event) {
     event.preventDefault();
 
+    // Check if an answer option is selected
     if (document.querySelector("input[name='answer-choice']:checked")) {
         // Check answers, proceed if correct, -5 seconds if wrong
         if (document.querySelector("input[name='answer-choice']:checked").value === questions[questionsIndex].answer) {
-            // playerScore += 20;
+            playerScore += 20;
             outcomeText.textContent = "Correct!";
             questionsIndex++;
             startQuiz();
         } else {
-            if (playerScore > 0) {
-                playerScore -= 5;
-            };
+            playerScore -= 5;
             timeAmount -= 5;
             outcomeText.textContent = "Wrong! -5 seconds";
         };
     } else {
         outcomeText.textContent = "Please choose an answer";
     };
+    console.log(playerScore);
 };
 
 // Function for logging player's name and score onto High Score board
@@ -190,7 +193,7 @@ function startAgain() {
     nameInput.value = "";
     timeAmount = 60;
     questionsIndex = 0;
-    playerScore = 100;
+    playerScore = 0;
 
     // Starts quiz all over
     startQuiz();
