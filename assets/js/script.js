@@ -133,12 +133,14 @@ var i = 0
 function loggingScore(event) {
     event.preventDefault();
 
-    // Store name input and score into object
+    // Store name input and score into object and store in local storage
     highScores.names = nameInput.value;
     highScores.finalScore = playerScore;
+    localStorage.setItem("highScores", JSON.stringify(highScores));
 
     // Add player score and name to highScore array
-    highScoreBoard.push(highScores);
+    var highScoresObject = JSON.parse(localStorage.getItem("highScores"));
+    highScoreBoard.push(highScoresObject);
 
     createLi(i);
 
@@ -146,7 +148,7 @@ function loggingScore(event) {
     document.querySelector("#name" + i).textContent = highScoreBoard[i].names;
     document.querySelector("#score" + i).textContent = highScoreBoard[i].finalScore;
 
-    i++
+    i++;
 
     // Replaces Submit button with Play Again button
     logScoreButton.setAttribute("style", "display:none");
