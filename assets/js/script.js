@@ -141,12 +141,15 @@ function loggingScore(event) {
     // Add player score and name to highScore array
     var highScoresObject = JSON.parse(localStorage.getItem("highScores"));
     highScoreBoard.push(highScoresObject);
+    highScoreBoard.sort((a, b) => {return b.finalScore - a.finalScore;});
 
     createLi(i);
 
-    // Add name and score to High Score board
-    document.querySelector("#name" + i).textContent = highScoreBoard[i].names;
-    document.querySelector("#score" + i).textContent = highScoreBoard[i].finalScore;
+    // Add name and score to High Score board with higher scores going first
+    for (var loopI = 0; loopI < highScoreBoard.length; loopI++) {
+        document.querySelector("#name" + loopI).textContent = highScoreBoard[loopI].names;
+        document.querySelector("#score" + loopI).textContent = highScoreBoard[loopI].finalScore;
+    }
 
     i++;
 
