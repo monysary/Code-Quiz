@@ -122,7 +122,9 @@ function submitQuiz(event) {
         questionsIndex++;
         startQuiz();
     } else {
-        playerScore -= 5;
+        if (playerScore > 0) {
+            playerScore -= 5;
+        };
         timeAmount -= 5;
         outcomeText.textContent = "Wrong! -5 seconds";
     };
