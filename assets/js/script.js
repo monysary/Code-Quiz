@@ -143,7 +143,6 @@ function loggingScore(event) {
 
     // Checks if player inputs their name
     if (nameInput.value != "" && nameInput.value.length <= 10) {
-        console.log("correct char input");
         // Store name input and score into object and store in local storage
         highScores.names = nameInput.value;
         highScores.finalScore = playerScore;
@@ -169,11 +168,9 @@ function loggingScore(event) {
 
     // Checks if input name has 10 characters or less
     } else if (nameInput.value.length > 10) {
-        console.log("char input too long");
         outcomeText.textContent = "Please enter 10 characters or less";
         outcomeText.setAttribute("style", "display:block");
     } else {
-        console.log("no char input");
         outcomeText.textContent = "Please enter your name";
         outcomeText.setAttribute("style", "display:block");
     };

@@ -141,7 +141,7 @@
     }
 }
 
-/* Media query for screen size max-heigh 750px */
+/* Media query for screen size max-height 750px */
 @media screen and (max-height: 750px) {
     ol li {
         margin-bottom: 15px;
