@@ -134,7 +134,6 @@ function submitQuiz(event) {
     } else {
         outcomeText.textContent = "Please choose an answer";
     };
-    console.log(playerScore);
 };
 
 // Function for logging player's name and score onto High Score board
@@ -143,7 +142,8 @@ function loggingScore(event) {
     event.preventDefault();
 
     // Checks if player inputs their name
-    if (nameInput.value != "") {
+    if (nameInput.value != "" && nameInput.value.length <= 10) {
+        console.log("correct char input");
         // Store name input and score into object and store in local storage
         highScores.names = nameInput.value;
         highScores.finalScore = playerScore;
@@ -161,14 +161,20 @@ function loggingScore(event) {
             document.querySelector("#name" + loopScore).textContent = highScoreBoard[loopScore].names;
             document.querySelector("#score" + loopScore).textContent = highScoreBoard[loopScore].finalScore;
         }
-
         i++;
 
         // Replaces Submit button with Play Again button
         logScoreButton.setAttribute("style", "display:none");
         startAgainButton.setAttribute("style", "display:block");
+
+    // Checks if input name has 10 characters or less
+    } else if (nameInput.value.length > 10) {
+        console.log("char input too long");
+        outcomeText.textContent = "Please enter 10 characters or less";
+        outcomeText.setAttribute("style", "display:block");
     } else {
-        outcomeText.textContent = "Please enter your name"
+        console.log("no char input");
+        outcomeText.textContent = "Please enter your name";
         outcomeText.setAttribute("style", "display:block");
     };
 };
