@@ -140,3 +140,18 @@
         grid-area: 5/1/6/2;
     }
 }
+
+/* Media query for screen size max-heigh 750px */
+@media screen and (max-height: 750px) {
+    ol li {
+        margin-bottom: 15px;
+    }
+
+    main {
+        grid-template-rows: 35% auto 20% 10%;
+    }
+
+    #displayed-questions {
+        font-size: 25px;
+    }
+}
