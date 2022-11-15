@@ -55,7 +55,11 @@ main {
     align-self: flex-end;
     width: 80%;
     height: 95%;
-
+    
+    /* Put everything in main into a grid */
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 35% 35% 20% 10%;
 }
 
 footer{
@@ -127,6 +131,7 @@ header p {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
+    margin-top: 10px;
 }
 
 input {
@@ -136,13 +141,6 @@ input {
 #outcome {
     text-align: center;
     font-size: 20px;
-}
-
-/* Put everything in main into a grid */
-main {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 35% 35% 20% 10%;
 }
 
 /* Enter name and display score styling */
