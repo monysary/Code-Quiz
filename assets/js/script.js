@@ -15,10 +15,6 @@ var highScoreBoard = [];
 var displayQuestion = document.querySelector("#displayed-questions");
 var displayAnswers = document.querySelector("#displayed-answers");
 var outcomeText = document.querySelector("#outcome");
-var choices1 = document.querySelector("#choice1");
-var choices2 = document.querySelector("#choice2");
-var choices3 = document.querySelector("#choice3");
-var choices4 = document.querySelector("#choice4");
 var questionsIndex = 0;
 
 // Button variables
