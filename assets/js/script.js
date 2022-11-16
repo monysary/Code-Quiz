@@ -80,10 +80,9 @@ function startQuiz() {
         displayQuestion.textContent = questions[questionsIndex].title;
 
         // Display answer options through label tags
-        choices1.textContent = questions[questionsIndex].choices[0];
-        choices2.textContent = questions[questionsIndex].choices[1];
-        choices3.textContent = questions[questionsIndex].choices[2];
-        choices4.textContent = questions[questionsIndex].choices[3];
+        for (var i = 0; i < 4; i++) {
+            displayAnswers.children[i].textContent = questions[questionsIndex].choices[i];
+        }
 
         // Generate radio button input next to answer options
         radioInput(choices1);
