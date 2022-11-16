@@ -85,10 +85,9 @@ function startQuiz() {
         }
 
         // Generate radio button input next to answer options
-        radioInput(choices1);
-        radioInput(choices2);
-        radioInput(choices3);
-        radioInput(choices4);
+        for (var i = 0; i < 4; i++) {
+            radioInput(displayAnswers.children[i]);
+        }
         
         // Set value attribute of input to answer choices
         displayAnswers[0].setAttribute("value", questions[questionsIndex].choices[0]);
