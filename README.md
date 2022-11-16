@@ -6,7 +6,7 @@ This is the coding quiz game for UCI Coding Boot Camp students.
 
 ## Installation
 
-Launch this site using any browser via the following link: 
+Launch this site using any browser via the following link: https://monysary.github.io/Module-4-Challenge-Code-Quiz/
 
 ## Usage
 
