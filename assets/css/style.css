@@ -131,7 +131,6 @@ header p {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
-    margin-top: 10px;
 }
 
 input {

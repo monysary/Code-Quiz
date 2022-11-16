@@ -76,7 +76,6 @@ function startQuiz() {
         quizEnd();
 
     } else {
-
         // Display the question
         displayQuestion.textContent = questions[questionsIndex].title;
 
@@ -178,7 +177,7 @@ function loggingScore(event) {
 
 // Function for creating list items under ordered list to log player name and score
 function createLi (x) {
-    if (x < 10) {
+    if (x <= 10) {
         // Creating list item
         var orderedListItem = document.createElement("li");
         orderedListItem.setAttribute("id", "score-entry" + x);
@@ -191,9 +190,7 @@ function createLi (x) {
         scoreDiv.setAttribute("id", "score" + x);
         orderedListItem.appendChild(nameDiv);
         orderedListItem.appendChild(scoreDiv);
-    } else {
-        return;
-    };
+    }
 };
 
 // Function for starting the quiz over
