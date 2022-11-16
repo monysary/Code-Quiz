@@ -86,10 +86,9 @@ function startQuiz() {
         }
         
         // Set value attribute of input to answer choices
-        displayAnswers[0].setAttribute("value", questions[questionsIndex].choices[0]);
-        displayAnswers[1].setAttribute("value", questions[questionsIndex].choices[1]);
-        displayAnswers[2].setAttribute("value", questions[questionsIndex].choices[2]);
-        displayAnswers[3].setAttribute("value", questions[questionsIndex].choices[3]);
+        for (var i = 0; i < 4; i++) {
+            displayAnswers[i].setAttribute("value", questions[questionsIndex].choices[i]);
+        }
 
         // Display questions, answer, and submit button
         displayQuestion.setAttribute("style", "visibility:visible;");
